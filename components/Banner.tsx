@@ -27,6 +27,12 @@ const Banner = ({ movies }: Props) => {
           objectFit="cover"
         />
       </div>
+      <div className="banner-text h-full">
+        <h1 className="text-4xl font-bold text-white">{ movie?.title || movie?.name || movie?.original_name }</h1>
+        <p className="max-w-xs text-xs text-shadow-md md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl">
+          { movie?.overview }
+        </p>
+      </div>
     </div>
   )
 }
