@@ -46,7 +46,7 @@ const Header = () => {
         </div>
         <div className="flex items-center space-x-4 text-sm font-light">
           <BiSearch className="h-6 w-6 hidden sm:inline-flex" />
-          <p className="hidden lg:inline-flex">Kids</p>
+          <p className="hidden lg:inline-flex font-normal">Kids</p>
           <BiBell className="h-6 w-6 hidden sm:inline-flex" />
           <Link href="/account">
             <img
