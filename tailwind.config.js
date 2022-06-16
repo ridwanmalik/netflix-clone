@@ -9,6 +9,12 @@ module.exports = {
         'gradient-to-b': 'linear-gradient(to bottom,rgba(20,20,20,0) 0,rgba(20,20,20,.15) 15%,rgba(20,20,20,.35) 29%,rgba(20,20,20,.58) 44%,#141414 68%,#141414 100%);',
         'gradient-bottom': 'linear-gradient(0deg, rgb(20 20 20) 10%, rgba(0,212,255,0) 50%)'
       },
+      minWidth: {
+        '44': '11rem',
+        '48': '12rem',
+        '64': '16rem',
+        '72': '18rem',
+      }
     },
   },
   plugins: [

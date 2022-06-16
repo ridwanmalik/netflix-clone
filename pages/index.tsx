@@ -5,6 +5,7 @@ import Banner from '../components/Banner'
 import requests from '../utils/requests'
 import { Movie } from '../types'
 import Slider from '../components/Slider'
+import Carousel from '../components/Carousel'
 
 interface Props {
   netflixOriginals: Movie[]
@@ -37,14 +38,14 @@ const Home = ({
         <Header />
         <Banner movies={ netflixOriginals } />
         <section>
-          <Slider title="Trending Now" movies={ trendingNow } />
-          <Slider title="Top Rated" movies={ topRated } />
-          <Slider title="Action Thrillers" movies={ actionMovies } />
+          <Carousel title="Trending Now" movies={ trendingNow } />
+          <Carousel title="Top Rated" movies={ topRated } />
+          <Carousel title="Action Thrillers" movies={ actionMovies } />
           {/* My List Component */ }
-          <Slider title="Comedies" movies={ comedyMovies } />
-          <Slider title="Scary Movies" movies={ horrorMovies } />
-          <Slider title="Romance Movies" movies={ romanceMovies } />
-          <Slider title="Documentaries" movies={ documentaries } />
+          <Carousel title="Comedies" movies={ comedyMovies } />
+          <Carousel title="Scary Movies" movies={ horrorMovies } />
+          <Carousel title="Romance Movies" movies={ romanceMovies } />
+          <Carousel title="Documentaries" movies={ documentaries } />
         </section>
       </main>
     </div>
