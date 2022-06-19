@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react'
-import { PrevButton, NextButton } from "./EmblaCarouselButtons";
 import useEmblaCarousel from "embla-carousel-react";
+import classNames from 'classnames';
+import { PrevButton, NextButton } from "./EmblaCarouselButtons";
 import { Movie } from '../types';
 import { makeClass } from '../utils/helpers';
 import Thumbnail from './Thumbnail';
@@ -40,7 +41,7 @@ const Carousel = ({ title, movies }: Props) => {
     <div className="carousel-wrapper ">
       <h2 className="carousel-title">{ title }</h2>
       <div className="carousel-body">
-        <div className={ `carousel-viewport ${makeClass(title)}` } ref={ viewportRef }>
+        <div className={ classNames("carousel-viewport", makeClass(title)) } ref={ viewportRef }>
           <div className="carousel-container">
             { movies.map(movie => (
               <Thumbnail movie={ movie } key={ movie.id } />

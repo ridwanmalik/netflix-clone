@@ -13,13 +13,14 @@
 }
 
 @layer components {
+  /* Global */
   .body-wrapper {
     @apply relative flex min-h-screen w-full flex-col bg-gradient-to-b;
   }
   .nav-link {
     @apply transform cursor-pointer text-sm font-light text-neutral-200 duration-400 hover:text-silver-chalice;
   }
-
+  /* Banner */
   .banner-wrapper {
     @apply flex h-75vh flex-col justify-center space-y-2 py-16 md:space-y-4 lg:pb-12;
   }
@@ -61,7 +62,7 @@
   .banner-button-icon {
     @apply text-xl leading-4;
   }
-
+  /* Carousel */
   .carousel-wrapper {
     @apply space-y-0.5 overflow-x-hidden px-8 py-5 md:space-y-2;
   }
@@ -84,5 +85,44 @@
     -khtml-user-select: none;
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  .carousel-viewport.is-draggable {
+    @apply cursor-grab;
+  }
+
+  .carousel-viewport.is-dragging {
+    @apply cursor-grabbing;
+  }
+  /* Carousel Button */
+  .carousel-button {
+    @apply absolute top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 cursor-pointer touch-manipulation items-center justify-center bg-transparent fill-white p-0;
+  }
+  .carousel-button:disabled {
+    @apply cursor-default opacity-30;
+  }
+
+  .carousel-button-svg {
+    @apply h-full w-full;
+  }
+
+  .carousel-button-prev {
+    @apply left-1;
+  }
+
+  .carousel-button-next {
+    @apply right-1;
+  }
+  /* Thumbnail */
+  .carousel-thumbnail {
+    @apply relative h-40 min-w-48 cursor-pointer px-1 md:min-w-72;
+  }
+
+  .carousel-thumbnail-inner {
+    @apply relative flex h-full w-full;
+  }
+
+  .carousel-thumbnail-image {
+    @apply h-full w-full rounded object-cover;
   }
 }

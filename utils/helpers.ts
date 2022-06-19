@@ -1,5 +1,6 @@
 import { Movie } from '../types'
 import { baseUrl } from '../constants/movie'
+import classNames, { Argument } from 'classnames'
 
 // Make Css Class
 export const makeClass = (string: string) =>

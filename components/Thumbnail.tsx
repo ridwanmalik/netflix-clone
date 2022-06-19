@@ -9,10 +9,10 @@ interface Props {
 
 const Thumbnail = ({ movie }: Props) => {
   return (
-    <div className="relative px-1 cursor-pointer h-40 min-w-48 md:min-w-72">
-      <div className="flex w-full h-full relative">
+    <div className="carousel-thumbnail">
+      <div className="carousel-thumbnail-inner">
         <Image
-          className="w-full h-full object-cover rounded"
+          className="carousel-thumbnail-image"
           src={ `https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path}` }
           alt={ getMovieName(movie) }
           layout="fill"
