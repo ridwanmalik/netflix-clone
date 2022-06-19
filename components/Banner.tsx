@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 import { Movie } from '../types';
 import { BiInfoCircle } from 'react-icons/bi';
-import { BsPlay } from 'react-icons/bs';
 import { IoPlayOutline } from "react-icons/io5";
-import { getMovieName, getMovieUrl, getRandomNumber } from '../utils/helpers';
+import { getMovieName, getMovieBannerUrl, getRandomNumber } from '../utils/helpers';
 interface Props {
   movies: Movie[]
 }
@@ -16,6 +15,7 @@ const Banner = ({ movies }: Props) => {
 
     const randomNumber = getRandomNumber(0, movies.length - 1)
     setMovie(movies[randomNumber])
+    console.log(`Log | file: Banner.tsx | line 19 | movies[randomNumber]`, movies[randomNumber])
 
   }, [movies])
 
@@ -24,7 +24,7 @@ const Banner = ({ movies }: Props) => {
     <div className="banner-wrapper">
       <div className="banner-image">
         <Image
-          src={ getMovieUrl(movie) }
+          src={ getMovieBannerUrl(movie) }
           layout="fill"
           objectFit="cover"
         />

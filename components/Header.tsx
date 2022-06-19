@@ -4,7 +4,6 @@ import { BiBell, BiSearch } from "react-icons/bi";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
-  console.log(`Log | file: Header.tsx | line 7 | false`, isScrolled)
 
   useEffect(() => {
     const handleScroll = () => {

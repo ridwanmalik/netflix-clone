@@ -1,7 +1,7 @@
 import React from 'react'
 import { Movie } from '../types'
 import Image from 'next/image';
-import { getMovieName } from '../utils/helpers';
+import { getMovieName, getMovieThumbnailUrl } from '../utils/helpers';
 
 interface Props {
   movie: Movie
@@ -13,7 +13,7 @@ const Thumbnail = ({ movie }: Props) => {
       <div className="carousel-thumbnail-inner">
         <Image
           className="carousel-thumbnail-image"
-          src={ `https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path}` }
+          src={ getMovieThumbnailUrl(movie) }
           alt={ getMovieName(movie) }
           layout="fill"
           priority={ true }
