@@ -20,7 +20,7 @@ const Slider = ({ title, movies }: Props) => {
 
   return (
     <div className="space-y-0.5 md:space-y-2 px-4">
-      <h2 className="w-56 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-white md:text-lg">{ title }</h2>
+      <h2 className="w-56 cursor-pointer text-sm font-semibold text-neutral-200 transition duration-200 hover:text-white md:text-lg">{ title }</h2>
       <BiChevronLeft
         className={ `absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 ${!isMoved ? 'hidden' : ''}` }
       // onClick={ () => handleClick('left') }

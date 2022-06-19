@@ -1,10 +1,9 @@
-import { handleClientScriptLoad } from 'next/script';
-import React, { WheelEvent, useState, useCallback, useEffect } from 'react'
-import { DotButton, PrevButton, NextButton } from "./EmblaCarouselButtons";
+import React, { useState, useCallback, useEffect } from 'react'
+import { PrevButton, NextButton } from "./EmblaCarouselButtons";
 import useEmblaCarousel from "embla-carousel-react";
 import { Movie } from '../types';
+import { makeClass } from '../utils/helpers';
 import Thumbnail from './Thumbnail';
-
 interface Props {
   title: string
   movies: Movie[]
@@ -12,8 +11,11 @@ interface Props {
 
 const Carousel = ({ title, movies }: Props) => {
   const [viewportRef, embla] = useEmblaCarousel({
+    dragFree: true,
     loop: true,
-    skipSnaps: false
+    slidesToScroll: 6,
+    skipSnaps: false,
+    align: 0
   });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
@@ -35,22 +37,13 @@ const Carousel = ({ title, movies }: Props) => {
   }, [embla, onSelect]);
 
   return (
-    <div className="space-y-0.5 md:space-y-2 px-4">
-      <h2 className="w-56 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-white md:text-lg">{ title }</h2>
-      <div className="wrapper">
-        <div className="embla__viewport" ref={ viewportRef }>
-          <div className="embla__container">
+    <div className="carousel-wrapper ">
+      <h2 className="carousel-title">{ title }</h2>
+      <div className="carousel-body">
+        <div className={ `carousel-viewport ${makeClass(title)}` } ref={ viewportRef }>
+          <div className="carousel-container">
             { movies.map(movie => (
-
-              <div className="embla__slide min-w-48 md:min-w-72" key={ movie.id }>
-                <div className="embla__slide__inner">
-                  <img
-                    className="w-full h-full object-cover"
-                    src={ `https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path}` }
-                    alt="A cool cat."
-                  />
-                </div>
-              </div>
+              <Thumbnail movie={ movie } key={ movie.id } />
             )) }
           </div>
         </div>

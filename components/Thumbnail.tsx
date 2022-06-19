@@ -1,6 +1,7 @@
 import React from 'react'
 import { Movie } from '../types'
 import Image from 'next/image';
+import { getMovieName } from '../utils/helpers';
 
 interface Props {
   movie: Movie
@@ -8,13 +9,16 @@ interface Props {
 
 const Thumbnail = ({ movie }: Props) => {
   return (
-    <div className="relative h-28 w-[180px] cursor-pointer transition duration-200 ease-out md:h-36 md:w-[260px]">
-      <Image
-        src={ `https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path
-          }` }
-        className="rounded-sm object-cover md:rounded"
-        layout="fill"
-      />
+    <div className="relative px-1 cursor-pointer h-40 min-w-48 md:min-w-72">
+      <div className="flex w-full h-full relative">
+        <Image
+          className="w-full h-full object-cover rounded"
+          src={ `https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path}` }
+          alt={ getMovieName(movie) }
+          layout="fill"
+          priority={ true }
+        />
+      </div>
     </div>
   )
 }

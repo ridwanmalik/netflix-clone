@@ -29,7 +29,7 @@ const Home = ({
   trendingNow,
 }: Props) => {
   return (
-    <div className="relative flex min-h-screen flex-col w-full bg-gradient-to-b">
+    <div className="body-wrapper">
       <Head>
         <title>Netflix</title>
         <link rel="icon" href="/favicon.ico" />
@@ -41,7 +41,7 @@ const Home = ({
           <Carousel title="Trending Now" movies={ trendingNow } />
           <Carousel title="Top Rated" movies={ topRated } />
           <Carousel title="Action Thrillers" movies={ actionMovies } />
-          {/* My List Component */ }
+          {/* TODO: My List Component */ }
           <Carousel title="Comedies" movies={ comedyMovies } />
           <Carousel title="Scary Movies" movies={ horrorMovies } />
           <Carousel title="Romance Movies" movies={ romanceMovies } />

@@ -24,7 +24,7 @@ const Header = () => {
 
 
   return (
-    <header className={ `${isScrolled ? 'bg-[#141414]' : ''}` }>
+    <header className={ `${isScrolled ? 'bg-eerie-black' : ''}` }>
       <div className="container mx-auto flex justify-between">
         <div className="flex items-center space-x-2 md:space-x-10">
           <Link href="/">

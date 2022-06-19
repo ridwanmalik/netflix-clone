@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#141414] text-white !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-red-600;
+    @apply bg-eerie-black text-white !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-red-600;
   }
 
   header {
@@ -13,11 +13,76 @@
 }
 
 @layer components {
+  .body-wrapper {
+    @apply relative flex min-h-screen w-full flex-col bg-gradient-to-b;
+  }
   .nav-link {
-    @apply transform cursor-pointer text-sm font-light text-[#e5e5e5] duration-[.4s] hover:text-[#b3b3b3];
+    @apply transform cursor-pointer text-sm font-light text-neutral-200 duration-400 hover:text-silver-chalice;
+  }
+
+  .banner-wrapper {
+    @apply flex h-75vh flex-col justify-center space-y-2 py-16 md:space-y-4 lg:pb-12;
+  }
+
+  .banner-image {
+    @apply absolute top-0 left-0 -z-20 h-95vh w-full;
+  }
+
+  .banner-gradient {
+    @apply absolute top-0 left-0 -z-10 h-95vh w-full bg-gradient-bottom;
+  }
+
+  .banner-container {
+    @apply container mx-auto px-4 lg:max-w-7xl;
+  }
+
+  .banner-movie-name {
+    @apply mb-3 max-w-xs text-2xl font-bold md:max-w-lg md:text-4xl lg:max-w-2xl lg:text-6xl;
+  }
+
+  .banner-movie-overview {
+    @apply mb-8 max-w-xs text-xs text-shadow-md md:max-w-lg md:text-lg lg:max-w-2xl lg:text-xl;
+  }
+
+  .banner-button-group {
+    @apply flex space-x-3;
   }
 
   .banner-button {
     @apply flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl;
+  }
+  .banner-button-play {
+    @apply bg-white text-black;
+  }
+  .banner-button-info {
+    @apply bg-gray-web/70;
+  }
+
+  .banner-button-icon {
+    @apply text-xl leading-4;
+  }
+
+  .carousel-wrapper {
+    @apply space-y-0.5 overflow-x-hidden px-8 py-5 md:space-y-2;
+  }
+
+  .carousel-title {
+    @apply mb-5 w-56 cursor-pointer text-sm font-semibold text-neutral-200 transition duration-200 hover:text-white md:text-lg;
+  }
+
+  .carousel-body {
+    @apply relative;
+  }
+
+  .carousel-viewport {
+    @apply w-full;
+  }
+
+  .carousel-container {
+    @apply -m-2.5 flex;
+    user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
   }
 }
