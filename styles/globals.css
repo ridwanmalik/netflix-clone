@@ -22,15 +22,15 @@
   }
   /* Banner */
   .banner-wrapper {
-    @apply flex h-75vh flex-col justify-center space-y-2 py-16 md:space-y-4 lg:pb-12;
+    @apply flex h-40vh flex-col justify-center space-y-2 py-16 md:h-75vh md:space-y-4 lg:pb-12;
   }
 
   .banner-image {
-    @apply absolute top-0 left-0 -z-20 h-95vh w-full;
+    @apply absolute top-0 left-0 -z-20 h-50vh w-full md:h-95vh;
   }
 
   .banner-gradient {
-    @apply absolute top-0 left-0 -z-10 !m-0 h-95vh w-full bg-gradient-bottom;
+    @apply absolute top-0 left-0 -z-10 !m-0 h-50vh w-full bg-gradient-bottom md:h-95vh;
   }
 
   .banner-container {
@@ -75,16 +75,16 @@
     @apply relative;
   }
 
-  .carousel-viewport {
-    @apply w-full;
-  }
-
   .carousel-container {
     @apply -m-2.5 flex;
     user-select: none;
     -khtml-user-select: none;
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  .carousel-viewport {
+    @apply w-full;
   }
 
   .carousel-viewport.is-draggable {
@@ -115,7 +115,7 @@
   }
   /* Thumbnail */
   .carousel-thumbnail {
-    @apply relative h-40 min-w-48 px-1 md:min-w-72;
+    @apply relative h-40 min-w-60 px-1 md:min-w-72;
   }
 
   .carousel-thumbnail-inner {
