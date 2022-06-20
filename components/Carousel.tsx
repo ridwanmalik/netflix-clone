@@ -40,7 +40,7 @@ const Carousel = ({ title, movies }: Props) => {
   return (
     <div className="carousel-wrapper ">
       <h2 className="carousel-title">{ title }</h2>
-      <div className="carousel-body">
+      <div className="carousel-body group">
         <div className={ classNames("carousel-viewport", makeClass(title)) } ref={ viewportRef }>
           <div className="carousel-container">
             { movies.map(movie => (

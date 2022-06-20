@@ -30,7 +30,7 @@
   }
 
   .banner-gradient {
-    @apply absolute top-0 left-0 -z-10 h-95vh w-full bg-gradient-bottom;
+    @apply absolute top-0 left-0 -z-10 !m-0 h-95vh w-full bg-gradient-bottom;
   }
 
   .banner-container {
@@ -38,11 +38,11 @@
   }
 
   .banner-movie-name {
-    @apply mb-3 max-w-xs text-2xl font-bold md:max-w-lg md:text-4xl lg:max-w-2xl lg:text-6xl;
+    @apply mb-3 max-w-xs text-2xl font-bold drop-shadow-lg md:max-w-lg md:text-4xl lg:max-w-2xl lg:text-6xl;
   }
 
   .banner-movie-overview {
-    @apply mb-8 max-w-xs text-xs text-shadow-md md:max-w-lg md:text-lg lg:max-w-2xl lg:text-xl;
+    @apply mb-8 max-w-xs text-xs drop-shadow-lg text-shadow-md md:max-w-lg md:text-lg lg:max-w-2xl lg:text-xl;
   }
 
   .banner-button-group {
@@ -96,7 +96,7 @@
   }
   /* Carousel Button */
   .carousel-button {
-    @apply absolute top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 cursor-pointer touch-manipulation items-center justify-center bg-transparent fill-white p-0;
+    @apply absolute top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 cursor-pointer touch-manipulation items-center justify-center bg-transparent fill-white p-0 opacity-0 outline-0 transition delay-150 ease-in-out group-hover:opacity-100;
   }
   .carousel-button:disabled {
     @apply cursor-default opacity-30;
@@ -115,11 +115,11 @@
   }
   /* Thumbnail */
   .carousel-thumbnail {
-    @apply relative h-40 min-w-48 cursor-pointer px-1 md:min-w-72;
+    @apply relative h-40 min-w-48 px-1 md:min-w-72;
   }
 
   .carousel-thumbnail-inner {
-    @apply relative flex h-full w-full;
+    @apply relative flex h-full w-full cursor-pointer;
   }
 
   .carousel-thumbnail-image {
