@@ -4,7 +4,6 @@ import Header from '../components/Header'
 import Banner from '../components/Banner'
 import requests from '../utils/requests'
 import { Movie } from '../types'
-import Slider from '../components/Slider'
 import Carousel from '../components/Carousel'
 
 interface Props {
